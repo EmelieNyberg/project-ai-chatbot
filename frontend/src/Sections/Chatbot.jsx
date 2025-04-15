@@ -1,6 +1,9 @@
 // frontend/Chatbot.jsx
 
 import { useState } from "react";
+import { IoSend } from "react-icons/io5";
+import aiAvatar from "../assets/ai-bot.png";
+import userAvatar from "../assets/user1.png";
 import "./Chatbot.css";
 
 export const Chatbot = () => {
@@ -31,26 +34,47 @@ export const Chatbot = () => {
 
   return (
     <div className="chatbot-container">
-
       <div className="chat-window">
         {messages.map((msg, index) => (
           <div
             key={index}
             className={`chat-message ${msg.role === "user" ? "user" : "ai"}`}
           >
-            <strong>{msg.role === "user" ? "Du:" : "AI:"}</strong> {msg.content}
+            <div className="avatar">
+              <img
+                src={msg.role === "user" ? userAvatar : aiAvatar}
+                alt={msg.role === "user" ? "User" : "AI"}
+              />
+            </div>
+
+            <div className="message-bubble">
+              <strong>{msg.role === "user" ? "Du:" : "AI:"}</strong> {msg.content}
+            </div>
           </div>
         ))}
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form
+        className="input-container"
+        onSubmit={handleSubmit}>
+
         <textarea
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => {
+            setInput(e.target.value);
+            e.target.style.height = "auto"; // först nollställ höjd
+            e.target.style.height = `${e.target.scrollHeight}px`; // sätt höjd = innehållets höjd
+          }}
           placeholder="Skriv din fråga här..."
-          rows={3}
         />
-        <button type="submit">Skicka</button>
+
+        <button
+          className={`send-btn ${input.trim() ? "active" : "inactive"}`}
+          type="submit"
+          disabled={!input.trim()}
+        >
+          <IoSend className="send-icon" size={24} />
+        </button>
       </form>
     </div>
   );
