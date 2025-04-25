@@ -1,0 +1,27 @@
+.avatar-gallery {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.avatar-gallery li {
+  grid-column: span 6;
+}
+
+.avatar-btn {
+  background: none;
+  border: none;
+  padding: none;
+  cursor: pointer;
+}
+
+.avatar-btn img {
+  width: 100px;
+  margin: auto;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.avatar-btn:hover img {
+  transform: scale(1.05);
+}

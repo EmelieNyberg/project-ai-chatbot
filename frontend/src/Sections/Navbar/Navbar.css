@@ -1,0 +1,10 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: hotpink;
+}
+
+.brand-logo {
+    color: white;
+}

@@ -48,7 +48,7 @@ export const Chatbot = () => {
             </div>
 
             <div className="message-bubble">
-              <strong>{msg.role === "user" ? "Du:" : "AI:"}</strong> {msg.content}
+              <strong>{msg.role === "user" ? "Du:" : "Livia:"}</strong> {msg.content}
             </div>
           </div>
         ))}
