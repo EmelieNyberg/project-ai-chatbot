@@ -12,8 +12,19 @@ import avatar7 from "../../assets/user7.png";
 import avatar8 from "../../assets/user8.png";
 import "./Settings.css";
 
-export const Settings = () => {
+export const Settings = ({ userAvatar, setUserAvatar }) => {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
+
+  const avatars = [
+    avatar1,
+    avatar2,
+    avatar3,
+    avatar4,
+    avatar5,
+    avatar6,
+    avatar7,
+    avatar8
+  ];
 
   return (
     <div>
@@ -27,46 +38,25 @@ export const Settings = () => {
           <h3>Välj din avatar!</h3>
 
           <ul className="avatar-gallery">
-            <li>
-              <button className="avatar-btn">
-                <img src={avatar1} alt="Avatar" />
-              </button>
-            </li>
-            <li>
-              <button className="avatar-btn">
-                <img src={avatar2} alt="Avatar" />
-              </button>
-            </li>
-            <li>
-              <button className="avatar-btn">
-                <img src={avatar3} alt="Avatar" />
-              </button>
-            </li>
-            <li>
-              <button className="avatar-btn">
-                <img src={avatar4} alt="Avatar" />
-              </button>
-            </li>
-            <li>
-              <button className="avatar-btn">
-                <img src={avatar5} alt="Avatar" />
-              </button>
-            </li>
-            <li>
-              <button className="avatar-btn">
-                <img src={avatar6} alt="Avatar" />
-              </button>
-            </li>
-            <li>
-              <button className="avatar-btn">
-                <img src={avatar7} alt="Avatar" />
-              </button>
-            </li>
-            <li>
-              <button className="avatar-btn">
-                <img src={avatar8} alt="Avatar" />
-              </button>
-            </li>
+            {avatars.map((avatar, index) => (
+
+              <li key={index}>
+
+                <button
+                  className={`avatar-btn ${userAvatar === avatar ? "active" : ""}`}
+                  onClick={() => setUserAvatar(avatar)}
+                >
+                  <img src={avatar} alt={`Avatar ${index + 1}`} />
+
+                </button>
+
+
+              </li>
+
+
+            ))}
+
+
           </ul>
 
         </section>

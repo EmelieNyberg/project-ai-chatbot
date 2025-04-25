@@ -3,10 +3,10 @@
 import { useState } from "react";
 import { IoSend } from "react-icons/io5";
 import aiAvatar from "../assets/ai-bot.png";
-import userAvatar from "../assets/user1.png";
+// import userAvatar from "../assets/user1.png";
 import "./Chatbot.css";
 
-export const Chatbot = () => {
+export const Chatbot = ({ userAvatar }) => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 

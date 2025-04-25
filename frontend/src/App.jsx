@@ -14,9 +14,9 @@ export const App = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar userAvatar={userAvatar} setUserAvatar={setUserAvatar} />
       <Hero />
-      <Chatbot />
+      <Chatbot userAvatar={userAvatar} />
     </>
   );
 };

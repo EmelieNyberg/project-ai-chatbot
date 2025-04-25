@@ -3,14 +3,14 @@
 import { Settings } from "../Settings/Settings";
 import "./Navbar.css";
 
-export const Navbar = () => {
+export const Navbar = ({ userAvatar, setUserAvatar }) => {
   return (
     <div className="navbar-container">
       <div className="brand">
         <h1 className="brand-logo">Livia</h1>
       </div>
 
-      <Settings />
+      <Settings userAvatar={userAvatar} setUserAvatar={setUserAvatar} />
     </div>
   );
 };
