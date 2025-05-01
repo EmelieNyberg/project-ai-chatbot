@@ -1,6 +1,7 @@
 // components/SidePanel.jsx
 import { motion, AnimatePresence } from "framer-motion";
 import { FocusTrap } from "focus-trap-react";
+import { IoClose } from "react-icons/io5";
 import "./SidePanel.css"; // skapa denna också!
 
 export const SidePanel = ({ isOpen, onClose, children }) => {
@@ -27,9 +28,13 @@ export const SidePanel = ({ isOpen, onClose, children }) => {
           >
             <FocusTrap>
               <div className="sidepanel-content">
-                <button className="sidepanel-close-btn" onClick={onClose}>
-                  Stäng
-                </button>
+                <div className="sidepanel-btn">
+                  <button
+                    className="sidepanel-close-btn"
+                    onClick={onClose}>
+                    <IoClose className="sidepanel-close-icon" />
+                  </button>
+                </div>
                 {children}
               </div>
             </FocusTrap>

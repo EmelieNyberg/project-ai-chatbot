@@ -25,12 +25,18 @@
   height: 100%;
 }
 
+.sidepanel-btn {
+  text-align: right;
+}
+
 .sidepanel-close-btn {
-  align-self: flex-end;
   background: none;
   border: none;
-  font-size: 1rem;
-  color: #555;
   cursor: pointer;
   margin-bottom: 1rem;
+}
+
+.sidepanel-close-icon {
+  font-size: 28px;
+  color: #555;
 }

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SidePanel } from "../../components/SidePanel";
+import { LuSettings } from "react-icons/lu";
 import avatar1 from "../../assets/user1.png";
 import avatar2 from "../../assets/user2.png";
 import avatar3 from "../../assets/user3.png";
@@ -28,7 +29,9 @@ export const Settings = ({ userAvatar, setUserAvatar }) => {
 
   return (
     <div>
-      <button onClick={() => setIsPanelOpen(true)}>Öppna sidpanel</button>
+      <button
+        className="settings-btn"
+        onClick={() => setIsPanelOpen(true)}><LuSettings className="settings-icon" /></button>
 
       <SidePanel isOpen={isPanelOpen} onClose={() => setIsPanelOpen(false)}>
         <h2>Hej från sidpanelen!</h2>
