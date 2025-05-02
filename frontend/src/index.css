@@ -4,6 +4,8 @@
 }
 
 body {
-  background-color: #fcd1b7;
+  /* background-color: #fcd1b7; */
+  /* background-color: rgba(102, 174, 177, 0.25); */
+  background-color: wheat;
   font-family: "Poppins", sans-serif;
 }

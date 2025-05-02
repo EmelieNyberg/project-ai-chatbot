@@ -12,7 +12,7 @@
   right: 0;
   width: 400px;
   height: 100vh;
-  background: white;
+  background: whitesmoke;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   display: flex;

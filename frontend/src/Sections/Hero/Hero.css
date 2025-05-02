@@ -1,21 +1,22 @@
 .hero-container {
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
 }
 
 .big-avatar {
+    margin: 20px 10px 0 20px;
     width: 150px;
     object-fit: contain;
 }
 
 .welcome-bubble {
-    max-width: 28%;
     padding: 1rem;
-    margin: 20px;
+    margin: 20px 20px 20px 10px;
     background-color: white;
     border-radius: 0 20px 20px 20px;
 }
 
 .welcome-text {
     font-weight: 300;
+    font-size: 20px;
 }

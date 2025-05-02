@@ -1,8 +1,10 @@
 .navbar-container {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background-color: hotpink;
+    align-items: center;
+    padding: 10px 20px;
+    /* background-color: rgb(102, 175, 177); */
+    background-color: rgb(250, 149, 165);
 }
 
 .brand-logo {

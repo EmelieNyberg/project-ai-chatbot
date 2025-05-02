@@ -1,7 +1,9 @@
 // frontend/Chatbot.jsx
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoSend } from "react-icons/io5";
+import { IoWarning } from "react-icons/io5";
+
 import aiAvatar from "../assets/ai-bot.png";
 // import userAvatar from "../assets/user1.png";
 import "./Chatbot.css";
@@ -9,6 +11,29 @@ import "./Chatbot.css";
 export const Chatbot = ({ userAvatar }) => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
+  const [isTyping, setIsTyping] = useState(false);
+
+
+
+  useEffect(() => {
+    const introMessage = {
+      role: "assistant",
+      content:
+        "Skriv din fråga här i chatten – det kan handla om ett specifikt livsmedel, en maträtt, eller varför inte klistra in ett helt recept så kikar jag på det.",
+    };
+
+    // Visa "Livia skriver..." först
+    setIsTyping(true);
+
+    const timeout = setTimeout(() => {
+      setMessages([introMessage]);
+      setIsTyping(false);
+    }, 1500); // justera tiden som du vill
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,18 +44,47 @@ export const Chatbot = ({ userAvatar }) => {
     setMessages(updatedMessages);
     setInput("");
 
-    const res = await fetch("http://localhost:8080/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ messages: updatedMessages }),
-    });
 
-    const data = await res.json();
-    const newAiMessage = { role: "assistant", content: data.reply };
-    setMessages([...updatedMessages, newAiMessage]);
+
+    const typingDelay = setTimeout(() => {
+      setIsTyping(true);
+
+
+    }, 600);
+
+    try {
+
+
+
+
+      const res = await fetch("http://localhost:8080/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ messages: updatedMessages }),
+      });
+
+      const data = await res.json();
+      const newAiMessage = { role: "assistant", content: data.reply };
+
+
+
+      setTimeout(() => {
+        clearTimeout(typingDelay);
+        setMessages((prev) => [...prev, newAiMessage]);
+        setIsTyping(false);
+      }, 1500); // justera delay efter behov
+
+    } catch (error) {
+      console.error("Fel vid API-anrop:", error);
+      clearTimeout(typingDelay);
+      setIsTyping(false);
+    }
   };
+
+  //   setMessages([...updatedMessages, newAiMessage]);
+  // };
 
   return (
     <div className="chatbot-container">
@@ -47,11 +101,25 @@ export const Chatbot = ({ userAvatar }) => {
               />
             </div>
 
-            <div className="message-bubble">
+            <p className="message-bubble">
               <strong>{msg.role === "user" ? "Du:" : "Livia:"}</strong> {msg.content}
-            </div>
+            </p>
           </div>
         ))}
+
+
+        {isTyping && (
+          <div className="chat-message ai">
+            <div className="avatar">
+              <img src={aiAvatar} alt="AI" />
+            </div>
+            <p className="message-bubble typing"><strong>Livia:</strong> Skriver<span className="dots"></span></p>
+          </div>
+        )}
+
+
+
+
       </div>
 
       <form
@@ -76,6 +144,8 @@ export const Chatbot = ({ userAvatar }) => {
           <IoSend className="send-icon" size={24} />
         </button>
       </form>
+
+      <p className="important-msg"><IoWarning />AI kan begå misstag. Kontrollera viktig information.</p>
     </div>
   );
 };
