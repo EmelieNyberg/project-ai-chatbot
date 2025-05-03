@@ -1,4 +1,15 @@
 .footer-container {
-    color: white;
-    background-color: rgb(250, 149, 165);
+    color: var(--text-color-2);
+    background-color: var(--primary-color);
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icon {
+    color: var(--text-color-2);
+    font-size: 28px;
+    margin: 10px;
 }

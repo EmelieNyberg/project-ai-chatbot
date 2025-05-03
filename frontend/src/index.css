@@ -3,9 +3,31 @@
   padding: 0;
 }
 
+:root {
+  --bg-color: wheat;
+  --text-color-1: black;
+  --text-color-2: white;
+  --text-color-3: #aaa;
+  --primary-color: rgb(250, 149, 165);
+  --secondary-color: white;
+  --chat-color: whitesmoke;
+  --chat-msg-user: rgba(250, 149, 166, 0.5);
+  --chat-msg-ai: white;
+}
+
+[data-theme="dark"] {
+  --bg-color: wheat;
+  --text-color-1: black;
+  --text-color-2: white;
+  --text-color-3: #aaa;
+  --primary-color: rgb(102, 175, 177);
+  --secondary-color: white;
+  --chat-color: whitesmoke;
+  --chat-msg-user: rgba(250, 149, 166, 0.5);
+  --chat-msg-ai: white;
+}
+
 body {
-  /* background-color: #fcd1b7; */
-  /* background-color: rgba(102, 174, 177, 0.25); */
-  background-color: wheat;
+  background-color: var(--bg-color);
   font-family: "Poppins", sans-serif;
 }
