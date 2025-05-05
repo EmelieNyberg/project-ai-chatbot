@@ -1,6 +1,7 @@
 // Sections/Settings/ToggleTheme.jsx
 
 import { useEffect, useState } from "react";
+import { TbSunFilled, TbMoonFilled } from "react-icons/tb";
 import "./ToggleTheme.css"
 
 export const ToggleTheme = () => {
@@ -31,7 +32,9 @@ export const ToggleTheme = () => {
         onChange={themeToggle}
       />
       <label htmlFor="theme-toggle">
-        {theme === "light" ? "🌙 Mörkt läge" : "☀️ Ljust läge"}
+        <span className={`toggle-thumb ${theme === "dark" ? "dark" : "light"}`}>
+          {theme === "dark" ? <TbMoonFilled /> : <TbSunFilled />}
+        </span>
       </label>
     </div>
   );

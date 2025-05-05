@@ -13,19 +13,19 @@
   --chat-color: whitesmoke;
   --chat-msg-user: rgba(250, 149, 166, 0.5);
   --chat-msg-ai: white;
-  --theme-toggle-bg: white;
-  --theme-toggle-fg: yellow;
+  --theme-toggle-bg: wheat;
+  --theme-toggle-fg: orange;
 }
 
 [data-theme="dark"] {
-  --bg-color: wheat;
+  --bg-color: rgb(86, 86, 86);
   --text-color-1: black;
   --text-color-2: white;
   --text-color-3: #aaa;
   --primary-color: rgb(102, 175, 177);
   --secondary-color: white;
-  --chat-color: whitesmoke;
-  --chat-msg-user: rgba(250, 149, 166, 0.5);
+  --chat-color: rgb(188, 187, 187);
+  --chat-msg-user: rgb(102, 175, 177, 0.5);
   --chat-msg-ai: white;
   --theme-toggle-bg: black;
   --theme-toggle-fg: darkblue;

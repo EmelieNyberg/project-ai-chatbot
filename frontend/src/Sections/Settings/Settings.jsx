@@ -41,28 +41,9 @@ export const Settings = ({ userAvatar, setUserAvatar }) => {
 
       <SidePanel isOpen={isPanelOpen} onClose={() => setIsPanelOpen(false)}>
         <h2>Hej från sidpanelen!</h2>
-        <p>Här kan du lägga vad du vill – t.ex. inställningar, info, formulär, osv.</p>
+
 
         <ToggleTheme />
-
-
-        {/* <section>
-          <h3>Välj din avatar!</h3>
-
-          <ul className="avatar-gallery">
-            {avatars.map((avatar, index) => (
-              <li key={index}>
-                <button
-                  className={`avatar-btn ${userAvatar === avatar ? "active" : ""}`}
-                  onClick={() => setUserAvatar(avatar)}
-                >
-                  <img src={avatar} alt={`Avatar ${index + 1}`} />
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section> */}
-
 
         <ToggleAvatar userAvatar={userAvatar} setUserAvatar={setUserAvatar} />
 

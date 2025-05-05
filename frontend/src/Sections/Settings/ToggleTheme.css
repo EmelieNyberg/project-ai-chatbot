@@ -1,4 +1,4 @@
-.theme-toggle {
+/* .theme-toggle {
     box-sizing: border-box;
 }
 
@@ -11,10 +11,10 @@
     align-items: center;
     font-size: 1.5em;
     cursor: pointer;
-    /* color: var(--primary-color); */
-}
+    color: var(--primary-color);
+} */
 
-.toggle+label::before {
+/* .toggle+label::before {
     content: "";
     height: 2em;
     width: 4em;
@@ -25,7 +25,7 @@
 }
 
 .toggle+label::after {
-    content: "☀️";
+    content: "";
     height: 1.8em;
     width: 1.8em;
     border-radius: 1em;
@@ -36,7 +36,54 @@
 }
 
 .toggle:checked+label::after {
-    /* Remove if I do not want emoji  */
-    content: "🌙";
     transform: translateX(100%);
+}
+ */
+
+
+
+.theme-toggle {
+    position: relative;
+}
+
+.toggle {
+    visibility: hidden;
+    position: absolute;
+}
+
+.toggle+label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 2em;
+    width: 4em;
+    font-size: 1.5em;
+    background-color: var(--theme-toggle-bg);
+    border-radius: 1em;
+    cursor: pointer;
+    transition: background-color 250ms ease-in-out;
+}
+
+/* "Knappen" med ikonen */
+.toggle-thumb {
+    position: absolute;
+    top: 0.1em;
+    left: 0.1em;
+    height: 1.8em;
+    width: 1.8em;
+    background-color: var(--theme-toggle-fg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 250ms ease-in-out;
+    font-size: 1em;
+    color: var(--text-color-2);
+    /* valfritt */
+    pointer-events: none;
+}
+
+/* Flytta till höger i dark mode */
+.toggle-thumb.dark {
+    transform: translateX(2em);
 }
