@@ -7,11 +7,20 @@ import { Chatbot } from "./Sections/Chatbot";
 import { Hero } from "./Sections/Hero/Hero";
 import { Footer } from "./Sections/Footer/Footer";
 
-// Defult avatar
 import avatar1 from "./assets/user1.png";
+import avatar2 from "./assets/user2.png";
+import avatar3 from "./assets/user3.png";
+import avatar4 from "./assets/user4.png";
+import avatar5 from "./assets/user5.png";
+import avatar6 from "./assets/user6.png";
+import avatar7 from "./assets/user7.png";
+import avatar8 from "./assets/user8.png";
 
 export const App = () => {
-  const [userAvatar, setUserAvatar] = useState(avatar1);
+  const [userAvatar, setUserAvatar] = useState(() => {
+    const saved = localStorage.getItem("avatar");
+    return saved || avatar1;
+  });
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -21,7 +30,10 @@ export const App = () => {
   }, []);
   return (
     <>
-      <Navbar userAvatar={userAvatar} setUserAvatar={setUserAvatar} />
+      <Navbar userAvatar={userAvatar} setUserAvatar={(avatar) => {
+        setUserAvatar(avatar);
+        localStorage.setItem("avatar", avatar);
+      }} />
       <Hero />
       <Chatbot userAvatar={userAvatar} />
       <Footer />
