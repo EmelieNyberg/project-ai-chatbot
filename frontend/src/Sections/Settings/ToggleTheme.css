@@ -43,7 +43,10 @@
 
 
 .theme-toggle {
+    display: flex;
+    justify-content: center;
     position: relative;
+    padding: 20px;
 }
 
 .toggle {

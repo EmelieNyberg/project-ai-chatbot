@@ -1,5 +1,5 @@
 .chatbot-container {
-  margin: 0 10px 20px 10px;
+  margin: 0 10px 30px 10px;
   font-family: sans-serif;
 }
 
@@ -26,8 +26,8 @@
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   margin-right: 0.5rem;
   flex-shrink: 0;
 }

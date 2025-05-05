@@ -36,7 +36,7 @@ export const Footer = () => {
           <TbCircleLetterEFilled />
         </a>
       </div>
-      <p>© 2025 Copyright - Developed by Emelie Nyberg Kedert</p>
+      <p className="footer-text">© 2025 Copyright - Developed by Emelie Nyberg Kedert</p>
     </footer>
   );
 };

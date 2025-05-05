@@ -25,7 +25,7 @@ export const ToggleAvatar = ({ userAvatar, setUserAvatar }) => {
 
   return (
     <section>
-      <h3>Välj din avatar!</h3>
+      <h3>AVATAR</h3>
 
       <ul className="avatar-gallery">
         {avatars.map((avatar, index) => (

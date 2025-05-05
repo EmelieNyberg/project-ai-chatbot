@@ -18,17 +18,17 @@
 }
 
 [data-theme="dark"] {
-  --bg-color: rgb(86, 86, 86);
+  --bg-color: rgb(102, 175, 177);
   --text-color-1: black;
   --text-color-2: white;
-  --text-color-3: #aaa;
-  --primary-color: rgb(102, 175, 177);
+  --text-color-3: #595959;
+  --primary-color: rgb(35, 65, 66);
   --secondary-color: white;
-  --chat-color: rgb(188, 187, 187);
-  --chat-msg-user: rgb(102, 175, 177, 0.5);
+  --chat-color: rgba(245, 245, 245, 0.507);
+  --chat-msg-user: rgb(35, 65, 66, 0.5);
   --chat-msg-ai: white;
-  --theme-toggle-bg: black;
-  --theme-toggle-fg: darkblue;
+  --theme-toggle-bg: rgb(35, 65, 66);
+  --theme-toggle-fg: rgb(102, 175, 177);
 }
 
 body {

@@ -40,7 +40,7 @@ export const Settings = ({ userAvatar, setUserAvatar }) => {
       </button>
 
       <SidePanel isOpen={isPanelOpen} onClose={() => setIsPanelOpen(false)}>
-        <h2>Hej från sidpanelen!</h2>
+        <h2 className="heading">Personliga inställningar</h2>
 
 
         <ToggleTheme />

@@ -5,8 +5,12 @@
 }
 
 .settings-icon {
-  font-size: 28px;
+  font-size: 30px;
   color: var(--text-color-2);
+}
+
+.heading {
+  margin-bottom: 30px;
 }
 
 /* .avatar-gallery {

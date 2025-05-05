@@ -15,19 +15,23 @@ export const ToggleTheme = () => {
   };
 
   return (
-    <div className="theme-toggle">
-      <input
-        type="checkbox"
-        id="theme-toggle"
-        className="toggle"
-        checked={theme === "dark"}
-        onChange={themeToggle}
-      />
-      <label htmlFor="theme-toggle">
-        <span className={`toggle-thumb ${theme === "dark" ? "dark" : "light"}`}>
-          {theme === "dark" ? <TbMoonFilled /> : <TbSunFilled />}
-        </span>
-      </label>
-    </div>
+    <section>
+      <h3>TEMA</h3>
+
+      <div className="theme-toggle">
+        <input
+          type="checkbox"
+          id="theme-toggle"
+          className="toggle"
+          checked={theme === "dark"}
+          onChange={themeToggle}
+        />
+        <label htmlFor="theme-toggle">
+          <span className={`toggle-thumb ${theme === "dark" ? "dark" : "light"}`}>
+            {theme === "dark" ? <TbMoonFilled /> : <TbSunFilled />}
+          </span>
+        </label>
+      </div>
+    </section>
   );
 };
