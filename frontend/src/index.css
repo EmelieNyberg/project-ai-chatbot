@@ -13,6 +13,8 @@
   --chat-color: whitesmoke;
   --chat-msg-user: rgba(250, 149, 166, 0.5);
   --chat-msg-ai: white;
+  --theme-toggle-bg: white;
+  --theme-toggle-fg: yellow;
 }
 
 [data-theme="dark"] {
@@ -25,6 +27,8 @@
   --chat-color: whitesmoke;
   --chat-msg-user: rgba(250, 149, 166, 0.5);
   --chat-msg-ai: white;
+  --theme-toggle-bg: black;
+  --theme-toggle-fg: darkblue;
 }
 
 body {
