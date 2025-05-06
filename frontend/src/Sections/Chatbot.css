@@ -1,7 +1,7 @@
 .chatbot-container {
-  background-color: var(--bg-color);
   padding: 0 10px 30px 10px;
   font-family: sans-serif;
+  max-width: 600px;
 }
 
 .chat-window {
@@ -144,7 +144,7 @@ textarea:focus {
 
 /* Endast när knappen är aktiv och man hovrar */
 .send-btn.active:hover .send-icon {
-  transform: scale(1.2);
+  transform: scale(1.1);
   /* växer med 20% */
 }
 
@@ -152,7 +152,18 @@ textarea:focus {
   color: var(--text-color-3);
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 5px;
   padding-top: 10px;
+}
+
+.important-msg svg {
+  display: inline;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+
+/* For desktop*/
+@media (min-width: 1024px) {
+  .chatbot-container {
+    padding: 30px 30px 30px 15px;
+  }
 }

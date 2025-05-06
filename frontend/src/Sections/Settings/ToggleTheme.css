@@ -90,3 +90,10 @@
 .toggle-thumb.dark {
     transform: translateX(2em);
 }
+
+/* For small mobile phones */
+@media (max-width: 410px) {
+    .toggle+label {
+        font-size: 1.2em;
+    }
+}

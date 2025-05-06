@@ -1,0 +1,16 @@
+.hero-chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+/* For desktop*/
+@media (min-width: 1024px) {
+  .hero-chat-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-around;
+  }
+}

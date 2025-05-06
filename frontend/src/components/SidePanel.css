@@ -37,6 +37,13 @@
 }
 
 .sidepanel-close-icon {
-  font-size: 28px;
+  font-size: 30px;
   color: #555;
+}
+
+/* For small mobile phones */
+@media (max-width: 410px) {
+  .sidepanel {
+    width: 350px;
+  }
 }

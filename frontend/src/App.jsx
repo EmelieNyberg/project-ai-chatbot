@@ -16,6 +16,8 @@ import avatar6 from "./assets/user6.png";
 import avatar7 from "./assets/user7.png";
 import avatar8 from "./assets/user8.png";
 
+import "./App.css";
+
 export const App = () => {
   const [userAvatar, setUserAvatar] = useState(() => {
     const saved = localStorage.getItem("avatar");
@@ -34,8 +36,10 @@ export const App = () => {
         setUserAvatar(avatar);
         localStorage.setItem("avatar", avatar);
       }} />
-      <Hero />
-      <Chatbot userAvatar={userAvatar} />
+      <div className="hero-chat-wrapper">
+        <Hero />
+        <Chatbot userAvatar={userAvatar} />
+      </div>
       <Footer />
     </>
   );

@@ -1,22 +1,27 @@
 .footer-container {
-    color: var(--text-color-2);
-    background-color: var(--primary-color);
-    padding: 20px;
+  color: var(--text-color-2);
+  background-color: var(--primary-color);
+  padding: 20px;
 }
 
 .footer-icons {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-icon {
-    color: var(--text-color-2);
-    font-size: 30px;
-    margin: 10px;
+  color: var(--text-color-2);
+  font-size: 30px;
+  margin: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.1);
 }
 
 .footer-text {
-    font-weight: 300;
-    text-align: center;
-    padding: 10px;
+  font-weight: 300;
+  text-align: center;
+  padding: 10px;
 }
