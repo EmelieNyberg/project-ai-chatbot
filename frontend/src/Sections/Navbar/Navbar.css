@@ -1,9 +1,13 @@
 .navbar-container {
+    /* to make a stickybar */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    /* background-color: rgb(102, 175, 177); */
     background-color: var(--primary-color);
 }
 
