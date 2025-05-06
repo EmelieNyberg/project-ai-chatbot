@@ -32,6 +32,6 @@
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: var(--primary-color);
   font-family: "Poppins", sans-serif;
 }

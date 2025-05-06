@@ -27,7 +27,7 @@
 }
 
 .avatar-btn.active img {
-  outline: 7px solid var(--primary-color);
+  outline: 10px solid var(--primary-color);
   border-radius: 50%;
   transform: scale(1.05);
 }

@@ -1,5 +1,6 @@
 .chatbot-container {
-  margin: 0 10px 30px 10px;
+  background-color: var(--bg-color);
+  padding: 0 10px 30px 10px;
   font-family: sans-serif;
 }
 

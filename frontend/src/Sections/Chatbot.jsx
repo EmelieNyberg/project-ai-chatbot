@@ -57,7 +57,7 @@ export const Chatbot = ({ userAvatar }) => {
 
 
 
-      const res = await fetch("http://localhost:8080/api/chat", {
+      const res = await fetch("https://project-ai-chatbot-backend.onrender.com/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
