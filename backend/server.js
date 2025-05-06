@@ -4,13 +4,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from 'dotenv';
 import { OpenAI } from 'openai';
-// import mongoose from "mongoose";
 
 dotenv.config();
-
-// const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/final-project";
-// mongoose.connect(mongoUrl);
-// mongoose.Promise = Promise;
 
 const port = process.env.PORT || 8080;
 const app = express();
@@ -19,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Hello Technigo!");
+  res.send("Welcome to the AI chatbot beckend!");
 });
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
@@ -38,7 +33,7 @@ app.post('/api/chat', async (req, res) => {
         },
         ...messages
       ],
-      model: "gpt-4o-mini", // eller gpt-3.5-turbo om du föredrar, eller gpt-4
+      model: "gpt-4o-mini", // or gpt-3.5-turbo, gpt-4o etc
     });
 
     res.json({ reply: completion.choices[0].message.content });
