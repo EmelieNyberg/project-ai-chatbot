@@ -1,12 +1,10 @@
 // App.jsx
 
 import { useState, useEffect } from "react";
-
 import { Navbar } from "./Sections/Navbar/Navbar";
-import { Chatbot } from "./Sections/Chatbot";
+import { Chatbot } from "./Sections/Chatbot/Chatbot";
 import { Hero } from "./Sections/Hero/Hero";
 import { Footer } from "./Sections/Footer/Footer";
-
 import avatar1 from "./assets/user1.png";
 import avatar2 from "./assets/user2.png";
 import avatar3 from "./assets/user3.png";
@@ -15,7 +13,6 @@ import avatar5 from "./assets/user5.png";
 import avatar6 from "./assets/user6.png";
 import avatar7 from "./assets/user7.png";
 import avatar8 from "./assets/user8.png";
-
 import "./App.css";
 
 export const App = () => {

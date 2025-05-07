@@ -1,6 +1,5 @@
 .chatbot-container {
   padding: 0 10px 30px 10px;
-  font-family: sans-serif;
   max-width: 600px;
 }
 
@@ -16,6 +15,7 @@
 .chat-message {
   display: flex;
   margin-bottom: 0.75rem;
+  font-family: sans-serif;
 }
 
 .chat-message.ai {
@@ -101,11 +101,8 @@ textarea {
   resize: none;
   overflow-y: auto;
   min-height: 1.5em;
-
   max-height: 7.5em;
-
   line-height: 1.5em;
-
   padding: 20px 10px 0 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -142,10 +139,9 @@ textarea:focus {
   transition: transform 0.2s ease;
 }
 
-/* Endast när knappen är aktiv och man hovrar */
+/* Only when button is active and you hover */
 .send-btn.active:hover .send-icon {
   transform: scale(1.1);
-  /* växer med 20% */
 }
 
 .important-msg {

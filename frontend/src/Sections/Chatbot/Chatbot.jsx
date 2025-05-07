@@ -4,8 +4,7 @@ import { useState, useEffect } from "react";
 import { IoSend } from "react-icons/io5";
 import { IoWarning } from "react-icons/io5";
 
-import aiAvatar from "../assets/ai-bot.png";
-// import userAvatar from "../assets/user1.png";
+import aiAvatar from "../../assets/ai-bot.png";
 import "./Chatbot.css";
 
 export const Chatbot = ({ userAvatar }) => {
