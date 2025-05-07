@@ -146,6 +146,7 @@ textarea:focus {
 
 .important-msg {
   color: var(--text-color-3);
+  font-weight: 300;
   display: flex;
   justify-content: center;
   padding-top: 10px;
