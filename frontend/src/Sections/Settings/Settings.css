@@ -17,37 +17,3 @@
 .heading {
   margin-bottom: 30px;
 }
-
-/* .avatar-gallery {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-}
-
-.avatar-gallery li {
-  grid-column: span 6;
-  margin: auto;
-}
-
-.avatar-btn {
-  background: none;
-  border: none;
-  padding: 20px;
-  cursor: pointer;
-  line-height: 0;
-}
-
-.avatar-btn img {
-  width: 100px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.avatar-btn:hover img {
-  transform: scale(1.05);
-}
-
-.avatar-btn.active img {
-  outline: 7px solid var(--primary-color);
-  border-radius: 50%;
-  transform: scale(1.05);
-} */
