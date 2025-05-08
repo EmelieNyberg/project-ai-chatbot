@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-html {
-  background-color: var(--bg-color);
-}
-
 body {
   background-color: var(--primary-color);
   font-family: "Poppins", sans-serif;
