@@ -1,6 +1,5 @@
 .chatbot-container {
   padding: 0 10px 30px 10px;
-  max-width: 600px;
 }
 
 .chat-window {
@@ -161,5 +160,13 @@ textarea:focus {
 @media (min-width: 1024px) {
   .chatbot-container {
     padding: 30px 30px 30px 15px;
+    width: 600px;
+  }
+}
+
+/* for tablet */
+@media (min-width: 668px) and (max-width: 1024px) {
+  .chatbot-container {
+    width: 600px;
   }
 }
