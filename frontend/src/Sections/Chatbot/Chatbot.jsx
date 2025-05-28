@@ -1,6 +1,6 @@
 // frontend/Chatbot.jsx
 
-import { useState, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { IoSend } from "react-icons/io5";
 import { IoWarning } from "react-icons/io5";
 
@@ -11,8 +11,7 @@ export const Chatbot = ({ userAvatar }) => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
-
-
+  const chatWindowRef = useRef(null);
 
   useEffect(() => {
     const introMessage = {
@@ -32,8 +31,6 @@ export const Chatbot = ({ userAvatar }) => {
     return () => clearTimeout(timeout);
   }, []);
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -43,19 +40,11 @@ export const Chatbot = ({ userAvatar }) => {
     setMessages(updatedMessages);
     setInput("");
 
-
-
     const typingDelay = setTimeout(() => {
       setIsTyping(true);
-
-
     }, 600);
 
     try {
-
-
-
-
       const res = await fetch("https://project-ai-chatbot-backend.onrender.com/api/chat", {
         method: "POST",
         headers: {
@@ -66,8 +55,6 @@ export const Chatbot = ({ userAvatar }) => {
 
       const data = await res.json();
       const newAiMessage = { role: "assistant", content: data.reply };
-
-
 
       setTimeout(() => {
         clearTimeout(typingDelay);
@@ -82,12 +69,18 @@ export const Chatbot = ({ userAvatar }) => {
     }
   };
 
-  //   setMessages([...updatedMessages, newAiMessage]);
-  // };
+  useEffect(() => {
+    if (chatWindowRef.current) {
+      chatWindowRef.current.scrollTo({
+        top: chatWindowRef.current.scrollHeight,
+        behavior: "smooth"
+      });
+    }
+  }, [messages, isTyping]);
 
   return (
     <div className="chatbot-container">
-      <div className="chat-window">
+      <div className="chat-window" ref={chatWindowRef}>
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -106,7 +99,6 @@ export const Chatbot = ({ userAvatar }) => {
           </div>
         ))}
 
-
         {isTyping && (
           <div className="chat-message ai">
             <div className="avatar">
@@ -115,10 +107,6 @@ export const Chatbot = ({ userAvatar }) => {
             <p className="message-bubble typing"><strong>Livia:</strong> Skriver<span className="dots"></span></p>
           </div>
         )}
-
-
-
-
       </div>
 
       <form
