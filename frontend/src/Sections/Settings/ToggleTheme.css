@@ -23,7 +23,7 @@
   transition: background-color 250ms ease-in-out;
 }
 
-/* "Knappen" med ikonen */
+/* Slider with sun and moon */
 .toggle-thumb {
   position: absolute;
   top: 0.1em;
@@ -38,11 +38,10 @@
   transition: transform 250ms ease-in-out;
   font-size: 1em;
   color: var(--text-color-2);
-  /* valfritt */
   pointer-events: none;
 }
 
-/* Flytta till höger i dark mode */
+/* Move to right in dark mode */
 .toggle-thumb.dark {
   transform: translateX(2em);
 }

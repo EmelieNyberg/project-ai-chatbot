@@ -1,53 +1,49 @@
 // Sections/Settings/Settings.jsx
 
+// Import React hook to manage the open/close state of the panel
 import { useState } from "react";
+
+// Import the SidePanel component (the sliding panel from the side)
 import { SidePanel } from "../../components/SidePanel";
+
+// Import the ToggleTheme component (light/dark mode switch)
 import { ToggleTheme } from "./ToggleTheme";
+
+// Import the ToggleAvatar component (to select an avatar image)
 import { ToggleAvatar } from "./ToggleAvatar";
+
+// Import the settings icon from React Icons
 import { LuSettings } from "react-icons/lu";
-// import avatar1 from "../../assets/user1.png";
-// import avatar2 from "../../assets/user2.png";
-// import avatar3 from "../../assets/user3.png";
-// import avatar4 from "../../assets/user4.png";
-// import avatar5 from "../../assets/user5.png";
-// import avatar6 from "../../assets/user6.png";
-// import avatar7 from "../../assets/user7.png";
-// import avatar8 from "../../assets/user8.png";
+
+// Import the CSS file for styling
 import "./Settings.css";
 
-
+// This is the Settings component
 export const Settings = ({ userAvatar, setUserAvatar }) => {
+  // Create a piece of state to track if the side panel is open or not
   const [isPanelOpen, setIsPanelOpen] = useState(false);
-
-  // const avatars = [
-  //   avatar1,
-  //   avatar2,
-  //   avatar3,
-  //   avatar4,
-  //   avatar5,
-  //   avatar6,
-  //   avatar7,
-  //   avatar8
-  // ];
 
   return (
     <div>
+      {/* Button to open the settings panel */}
       <button
         className="settings-btn"
-        onClick={() => setIsPanelOpen(true)}
+        onClick={() => setIsPanelOpen(true)} // When clicked, open the side panel
       >
+        {/* Settings gear icon inside the button */}
         <LuSettings className="settings-icon" />
       </button>
 
+      {/* The SidePanel, shown only if isPanelOpen is true */}
       <SidePanel isOpen={isPanelOpen} onClose={() => setIsPanelOpen(false)}>
+        {/* Title inside the side panel */}
         <h2 className="heading">Personliga inställningar</h2>
 
-
+        {/* Toggle for changing between dark/light mode */}
         <ToggleTheme />
 
+        {/* Component to choose a user avatar */}
         <ToggleAvatar userAvatar={userAvatar} setUserAvatar={setUserAvatar} />
-
-
       </SidePanel>
     </div>
   );
