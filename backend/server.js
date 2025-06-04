@@ -1,28 +1,40 @@
 // backend/server.js
 
-import express from "express";
-import cors from "cors";
-import dotenv from 'dotenv';
-import { OpenAI } from 'openai';
+// Import necessary libraries
+import express from "express"; // Express helps us create the server
+import cors from "cors"; // CORS allows our frontend to connect to the server
+import dotenv from 'dotenv'; // dotenv loads secret keys from a .env file
+import { OpenAI } from 'openai'; // Import OpenAI to use the AI chatbot
 
+// Load the environment variables (like my API key)
 dotenv.config();
 
+// Set the port where the server will run (use 8080 if no PORT is set)
 const port = process.env.PORT || 8080;
+
+// Create a new Express application
 const app = express();
 
+// Use CORS so different origins (like frontend and backend) can talk to each other
 app.use(cors());
+
+// Let the server understand JSON data
 app.use(express.json());
 
+// Create a basic route for the home page (optional but nice for testing)
 app.get("/", (req, res) => {
   res.send("Welcome to the AI chatbot backend!");
 });
 
+// Connect to OpenAI using your secret API key
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
+// Create a route that will handle chat messages
 app.post('/api/chat', async (req, res) => {
-  const { messages } = req.body;
+  const { messages } = req.body; // Get the chat history from the frontend
 
   try {
+    // Ask OpenAI to create a response based on the messages
     const completion = await openai.chat.completions.create({
       messages: [
         {
@@ -46,19 +58,21 @@ app.post('/api/chat', async (req, res) => {
             Håll en varm, lugn och trygg ton. Du är hjälpsam, men försiktig – du gissar aldrig.
           `
         },
-        ...messages
+        ...messages // Add the user's chat messages after the system instruction
       ],
-      model: "gpt-4o-mini", // or gpt-3.5-turbo, gpt-4o etc
+      model: "gpt-4o-mini", // Choose which AI model to use (you can change this to gpt-3.5-turbo, gpt-4o etc)
     });
 
+    // Send the AI's reply back to the frontend
     res.json({ reply: completion.choices[0].message.content });
   } catch (err) {
+    // If something goes wrong, show an error and send an error response
     console.error("OpenAI-error:", err);
     res.status(500).json({ error: "Something went wrong." });
   }
 });
 
-// Start the server
+// Start the server and listen for requests on the chosen port
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
